@@ -1,3 +1,3 @@
 # mixProj-crud-ajax-php
 
-<img src="h.png">
+<img src="demo.png">
