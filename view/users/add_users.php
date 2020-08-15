@@ -13,6 +13,7 @@
             <label>Email</label>
             <input type="email" name="email" id="email" class="form-control" required>
         </div>
+
         <div class="form-group">
             <label>Password</label>
             <input type="password" name="password" id="password" class="form-control" required>
@@ -32,11 +33,10 @@
             <label>avatar</label>
             <input type="file" name="avatar" id="avatar" class="form-control" required>
         </div>
-
-
-    </div>
-    <div class="modal-footer">
+        <div class="modal-footer">
         <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
         <input type="submit" class="btn btn-success" name="add_user_form" value="Add">
+         </div>
     </div>
+
 </form>
