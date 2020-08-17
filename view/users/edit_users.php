@@ -1,4 +1,5 @@
-<form action="index.php?action=add_users" method="post" enctype="multipart/form-data">
+
+<form action="index.php?action=edit_users&id=<?php echo $id ?>" method="post" enctype="multipart/form-data">
     <div class="modal-header">
         <h4 class="modal-title">Add User</h4>
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -6,7 +7,7 @@
     <div class="modal-body">
         <div class="form-group">
             <label>Name</label>
-            <input type="text" name="name" id="name" class="form-control" required>
+            <input type="text" name="name" id="name" class="form-control"  value="<?php echo $editUsers['name'] ?>" required>
         </div>
         <div class="form-group">
             <label>Email</label>
@@ -34,7 +35,7 @@
         </div>
         <div class="modal-footer">
         <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-        <input type="submit" class="btn btn-info" value="Save">
+        <input type="submit" name="edit_users_form" class="btn btn-info" value="Save">
     </div>
     </div>
 </form>

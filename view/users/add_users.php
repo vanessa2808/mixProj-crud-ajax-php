@@ -35,7 +35,7 @@
         </div>
         <div class="modal-footer">
         <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-        <input type="submit" class="btn btn-success" name="add_user_form" value="Add">
+            <input type="submit" class="btn btn-success" name="add_user_form" value="Add">
          </div>
     </div>
 

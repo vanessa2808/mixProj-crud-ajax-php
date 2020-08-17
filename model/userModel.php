@@ -21,9 +21,9 @@
             return mysqli_query($this->connect(), $sql);
 
         }
-        public function editUsers($id, $name, $birthday, $created)
+        public function editUsers($id, $name,$email,$password,$address,$birthday, $avatar, $role_id, $created, $updated)
         {
-            $sql = "UPDATE users SET name = '$name', birthday = '$birthday',created = '$created' WHERE id = $id";
+            $sql = "UPDATE users SET name = '$name', email = '$email', password = '$password', address = '$address', birthday = '$birthday', avatar = '$avatar', role_id = '$role_id',created = '$created', updated = '$created' WHERE id = $id";
 
             return mysqli_query($this->connect(), $sql);
 

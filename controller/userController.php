@@ -37,14 +37,12 @@ class userController {
                     $address = $_POST['address'];
                     $birthday = date('Y-m-d');
                     $avatar = 'default.jpg';
+                    $pathUpload = 'webroot/uploads/users/';
 
-                    if ($_FILES['avatar']['error'] == 0) {
-                        $oldImage = $avatar;
-                        $avatar = uniqid() . '_' . $_FILES['avatar']['name'];
-                        move_uploaded_file($_FILES['avatar']['tmp_name'], 'webroot/uploads/users/' . $avatar);
-                        if ($oldImage != 'default.jpg') {
-                            unlink("webroot/uploads/users/" . $oldImage);
-                        }
+                    if ($_FILES['avatar']['error'] == TRUE) {
+                        move_uploaded_file($_FILES['avatar']['tmp_name'], $pathUpload.$_FILES['avatar']['name']);
+                        $avatar = $_FILES['avatar']['name'];
+
                     }
 
                     $role_id = 1;
@@ -69,11 +67,25 @@ class userController {
                 $editUsers = $model->getUsers($id);
                 if (isset($_POST['edit_users_form'])) {
                     $name = $_POST['name'];
+                    $email = $_POST['email'];
+                    $password = $_POST['password'];
+                    $address = $_POST['address'];
                     $birthday = date('Y-m-d');
-                    $created = date('Y-m-d');
+                    $avatar = 'default.jpg';
+                    $pathUpload = 'webroot/uploads/users/';
 
-                    if ($model->editUsers($id, $name, $birthday, $created) === TRUE) {
-                        $functionCommon->redirectPage('index.php?action=list_users');
+                    if ($_FILES['avatar']['error'] == TRUE) {
+                        move_uploaded_file($_FILES['avatar']['tmp_name'], $pathUpload.$_FILES['avatar']['name']);
+                        $avatar = $_FILES['avatar']['name'];
+
+                    }
+
+                    $role_id = 1;
+                    $created = date('Y-m-d h:i:s');
+                    $updated = date('Y-m-d h:i:s');
+
+                    if ($model->editUsers($id,$name,$email,$password,$address,$birthday, $avatar, $role_id, $created, $updated) === TRUE) {
+                        $functionCommon->redirectPage('index.php');
                     }
                 }
                 include 'view/users/edit_users.php';
