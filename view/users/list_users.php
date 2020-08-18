@@ -35,10 +35,6 @@
     <div class="container">
         <h2 class="text-center">CRUD USER USING PHP AJAX</h2>
 
-        <?php
-        include "view/message.php";
-        ?>
-
         <div id="loader"></div>
         <div style="display:block; opacity: 1" id="myDiv" class="animate-bottom">
 
@@ -175,7 +171,7 @@
                     include "view/users/edit_users.php";
 
                     ?>
-                    ?>
+
                 </div>
             </div>
         </div>
@@ -205,7 +201,7 @@
 
 
         <script src="view/users/ajax/search.js"></script>
-            <script src="view/users/ajax/add.js"></script>
+        <script src="view/users/ajax/add.js"></script>
         <script src="cssjs/js/index.js"></script>
         <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js" integrity="sha512-UdIMMlVx0HEynClOIFSyOrPggomfhBKJE28LKl8yR3ghkgugPnG6iLfRfHwushZl1MOPSY6TsuBDGPK2X4zYKg==" crossorigin="anonymous"></script>

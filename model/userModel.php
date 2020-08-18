@@ -15,6 +15,18 @@
             return mysqli_query($this->connect(), $sql);
 
         }
+        function login($email, $password) {
+            $sql = "SELECT * FROM users WHERE email = '$email' AND password = '$password'";
+            return mysqli_query($this->connect(), $sql);
+
+        }
+
+        function checkExistUser($email) {
+            $sql = "SELECT * FROM users WHERE email = '$email'";
+            return mysqli_query($this->connect(), $sql);
+        }
+
+
         public function addUsers($name,$email,$password,$address,$birthday, $avatar, $role_id, $created, $updated) {
             $role_id = 1;
             $sql = "INSERT INTO users (name,email, password, address,  birthday, avatar, role_id, created, updated) VALUES ('$name', '$email', '$password', '$address','$birthday', '$avatar','$role_id','$created', '$updated')";

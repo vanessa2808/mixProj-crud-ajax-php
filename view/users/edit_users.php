@@ -1,7 +1,7 @@
 
 <form action="index.php?action=edit_users&id=<?php echo $id ?>" method="post" enctype="multipart/form-data">
     <div class="modal-header">
-        <h4 class="modal-title">Add User</h4>
+        <h4 class="modal-title">Edit User</h4>
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
     </div>
     <div class="modal-body">

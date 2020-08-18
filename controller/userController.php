@@ -7,12 +7,26 @@ class userController {
     public function handleRequest() {
         $model = new userModel();
         $functionCommon = new FunctionCommon();
-        $action = isset($_GET['action'])?$_GET['action']:'list_users';
+        $action = isset($_GET['action'])?$_GET['action']:'login';
         switch ($action) {
+            case 'login':
+                if (isset($_POST['login'])) {
+                    $email = $_POST['email'];
+                    $password =$_POST['password'];
+                    $checklogin = $model->login($email, $password);
+                    if ($checklogin->num_rows > 0) {
+                        $_SESSION['login'] = $email;
+                        $functionCommon->redirectPage( 'index.php?action=list_users');
+                    }
+                }
+                include 'login.php';
+                break;
             case 'fetch.php':
                 include 'view/users/fetch.php';
                 break;
             case 'list_users':
+                $this->checkLoginSession();
+
                 $userList = $model->getUserPage();
 
                 include 'view/users/list_users.php';
@@ -89,14 +103,22 @@ class userController {
                     }
                 }
                 include 'view/users/edit_users.php';
-
+                include "index.php";
                 break;
+
 
 
 
             default:
                 # code...
                 break;
+        }
+    }
+    function checkLoginSession() {
+        $model = new userModel();
+        $functionCommon = new FunctionCommon();
+        if (!isset($_SESSION['login'])) {
+            $functionCommon->redirectPage(); ("admin.php?&action=login");
         }
     }
 
