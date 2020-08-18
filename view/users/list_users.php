@@ -50,6 +50,7 @@
                                 <div class="col-sm-6">
                                     <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New User</span></a>
                                     <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>
+                                    <a href="index.php?action=logout" class="btn btn-warning">Logout</></a>
                                 </div>
                             </div>
                         </div>

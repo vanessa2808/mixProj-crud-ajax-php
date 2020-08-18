@@ -17,9 +17,15 @@ class userController {
                     if ($checklogin->num_rows > 0) {
                         $_SESSION['login'] = $email;
                         $functionCommon->redirectPage( 'index.php?action=list_users');
+
                     }
                 }
                 include 'login.php';
+                break;
+            case 'logout':
+                unset($_SESSION['login']);
+                $functionCommon->redirectPage('index.php?action=login');
+
                 break;
             case 'fetch.php':
                 include 'view/users/fetch.php';

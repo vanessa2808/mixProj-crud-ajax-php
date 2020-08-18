@@ -5,5 +5,6 @@ class FunctionCommon {
         header("Location:$action");
     }
 
+
 }
 ?>
